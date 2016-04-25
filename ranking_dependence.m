@@ -13,7 +13,7 @@ xy_set = intersect(x_set,y_set);
 overlap_size = length(xy_set) ;
 
 if overlap_size > 0
-    r = sum(tau_Y(xy_set) > tau_X(xy_set))/overlap_size;
+    r = sum(2*(tau_Y(xy_set) > tau_X(xy_set)) -1)/overlap_size;
 else
     r = 0;
 end
