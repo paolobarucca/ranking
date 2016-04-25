@@ -16,9 +16,10 @@ for s1 = 1:51
             [r ov] = ranking_dependence(X,Y,k);
             ranking_dependence_tensor(s1,s2,k) = r;
             overlap_set_tensor(s1,s2,k) = ov;  
-            
-            ranking_dependence_tensor(s2,s1,k) = 1-r;
-            overlap_set_tensor(s2,s1,k) = ov;   
+            overlap_set_tensor(s2,s1,k) = ov;  
+            if ov > 0
+            ranking_dependence_tensor(s2,s1,k) = 1-r; 
+            end
         end
     end
 end
